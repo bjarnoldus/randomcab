@@ -24,6 +24,7 @@ The configuration of the application is separated in an configuration file. This
 
 Testing
 -------------
+RandomCab comes with a set of unit test for the mail failover backend and main view handlers. Execute manage.py test to execute them
 
 Live example
 -------------
