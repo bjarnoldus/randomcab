@@ -1,0 +1,15 @@
+.project
+.pyproject
+.pydevproject
+.sass-cache
+resources/static/css/main.css
+__pycache__
+resources/static/css/vendor/base/style.css
+
+resources/static/css/vendor/buttons/buttons.css
+
+src/sqlite.db
+
+etc/randomcab/main.ini
+
+*.pyc

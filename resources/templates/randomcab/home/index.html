@@ -1,0 +1,107 @@
+{% load widget_tweaks %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Jeroen Arnoldus">
+        <title>RandomCab</title>
+        <meta name="description" content="RandomCab - For Rides">
+        <meta property="og:title" content="RandomCab - For Rides">
+        <meta property="og:image" content="img/taxi1.jpg"/>
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+		<link href='http://fonts.googleapis.com/css?family=Lobster+Two' rel='stylesheet' type='text/css'>
+		<link href="/static/css/randomcab.css" rel="stylesheet" />
+
+  		<link href='http://fonts.googleapis.com/css?family=Roboto:100,300,400,900,500,700' rel='stylesheet' type='text/css'>
+		<style>
+			img.bg {
+			  /* Set rules to fill background */
+			  min-height: 100%;
+			  min-width: 1024px;
+				
+			  /* Set up proportionate scaling */
+			  width: 100%;
+			  height: auto;
+				
+			  /* Set up positioning */
+			  position: fixed;
+			  top: 0;
+			  left: 0;
+			}
+			
+			@media screen and (max-width: 1024px) { /* Specific to this particular image */
+			  img.bg {
+			    left: 50%;
+			    margin-left: -512px;   /* 50% */
+			  }
+			}
+		</style>
+    </head>
+
+ <body>
+  <img src="/static/img/taxi2.jpg" class="bg">
+  <div class="left">
+    <section>
+      <h3>
+      	<a href="#">
+      		<span class="lobster title orange">RandomCab</span><span class="lobster title yellow">&nbsp;. </span>
+      		<br/><br/>
+      		<span class="lobster title white">For Rides</span><span class="lobster title yellow">&nbsp;. </span>
+      	</a>
+      </h3>
+      {% if success %}
+      <h2>Your message has been sent!</h2>
+      <a href="/" class="btn" ">HOME</a>          
+      
+      {% else %}
+      <h3 class="margin-30 black-border">In a dull moment moment, when you need a 
+      		<span class="bold">free ride</span>, this is your chance. Compose a message to a friend, and send him an 
+      		<span class="bold">awesome random cab</span> image. Your ride will arrive soon!
+      	
+      </h3>
+      <div class="margin-30">
+         <div class="mailform">
+         	<h2>Send your message:</h2>
+            <form method="post" class="row" action="">
+              	{% csrf_token %}
+              	<div>
+			  		{{ form.email_from|add_class:"input"|attr:"placeholder:your@address.com"}}
+              		{% if form.email_from.errors %}
+              		<br/><span class="bold red">{{ form.errors.email_from.as_text }}</span>
+	        		{% endif %}
+			  	</div>
+              	<div>
+			  		{{ form.email_to|add_class:"input"|attr:"placeholder:friend@address.com"}}
+              		{% if form.email_to.errors %}
+              		<br/><span class="bold red">{{ form.errors.email_to.as_text }}</span>
+	        		{% endif %}
+			  	</div>
+              	<div>
+			  		{{ form.subject|add_class:"input"|attr:"placeholder:I need a ride"}}
+              		{% if form.subject.errors %}
+              		<br/><span class="bold red">{{ form.errors.subject.as_text }}</span>
+	        		{% endif %}
+			  	</div>
+              	<div>
+			  		{{ form.message|add_class:"input"|attr:"placeholder:Your message"}}
+              		{% if form.message.errors %}
+              		<br/><span class="bold red">{{ form.errors.message.as_text }}</span>
+	        		{% endif %}
+			  	</div>  	
+                <input type="submit" style="display:none;" id="submit-form-button"></p>
+
+             </form>
+         </div>
+        <a href="javascript:void(0);" class="btn" onclick="$('#submit-form-button').trigger('click');">Send!</a>          
+        
+      </div>
+      {% endif %}
+    </section>
+
+  </div>
+  {% include "randomcab/home/tracking.html" %}
+ </body>
+</html>

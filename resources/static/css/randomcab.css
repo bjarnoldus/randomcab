@@ -1,0 +1,242 @@
+/* Defaults ==================================== */
+html {
+	height: 100%
+}
+
+body {
+	height: 100%;
+	color: #777;
+	font-family: 'Roboto', sans-serif;
+	font-weight: 300;
+	padding: 0;
+	margin: 0;
+	font-size: 14px;
+	line-height: 1.6em;
+	height: 100%;
+}
+
+/* Typography ==================================== */
+h1, h2, h3, h4, h5, h6 {
+	margin: 0 0 3em;
+	padding: 0;
+	font-weight: 300;
+}
+
+h1 {
+	font-size: 3em;
+	line-height: 1.2em;
+	margin: 0 0 .8em;
+}
+
+h2 {
+	font-size: 1.8em;
+	line-height: 1.4em;
+	margin: 0 0 .8em;
+}
+
+h3 {
+	font-size: 1.4em;
+	line-height: 1.4em;
+}
+
+h4 {
+	font-size: 1.2em;
+	line-height: 1.4em;
+}
+
+h5 {
+	font-size: 1.1em;
+	line-height: 1.4em;
+}
+
+h6 {
+	font-size: 1em;
+	line-height: 1.2em;
+}
+
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+	text-decoration: none
+}
+
+p {
+	padding: 0 0 1em;
+	margin: 0;
+}
+
+a {
+	color: #444;
+}
+
+a.btn, a.btn:visited {
+	-webkit-appearance: none;
+	border: 0;
+	padding: 0.5em 1.5em;
+	margin: 0 1em 1em 0;
+	font-size: 1.7em;
+	line-height: 4em;
+	text-transform: uppercase;
+	font-weight: 800;
+	text-decoration: none;
+	border-radius: 5px;
+	box-shadow: 1px 1px 11px rgba(87, 87, 87, 0.64);
+	background: #df912e;
+	color: white;
+}
+
+a.btn:hover {
+	-webkit-appearance: none;
+	background: #e6cc29; /* pink */
+	box-shadow: none;
+	color: black;
+}
+
+.lobster {
+	font-family: 'Lobster Two';
+}
+
+.title {
+	font-size: 3.6em;
+}
+
+.red {
+	color: #ff0000;
+	text-shadow: 0px 0px 2px rgb(102, 102, 102);	
+}
+.orange {
+	color: #e88d30;
+	
+	text-shadow: 0px 0px 2px rgb(102, 102, 102);
+}
+
+.white {
+	color: #cdb7a8;
+	text-shadow: 0px 0px 2px rgb(102, 102, 102);
+}
+
+.yellow {
+	color: #efc42c;
+	text-shadow: 0px 0px 2px rgb(181, 181, 181);
+}
+
+.bold {
+	font-weight: 800;
+}
+
+.align-center {
+	text-align: center
+}
+
+.align-left {
+	text-align: left
+}
+
+.align-right {
+	text-align: right
+}
+
+.margin-30 {
+	margin-bottom: 30px;
+	margin-top: 30px;
+}
+
+.white-border {
+	text-shadow: 0px 0px 2px white;
+}
+
+.black-border {
+	text-shadow: 0px 0px 2px black;
+}
+
+.input {
+	width: 80%;
+	border: none;
+	border-radius: 3px;
+	font-size: 1.1em;
+	margin-top: 4px;
+	margin-bottom: 4px;
+	padding: 5px 10px;
+	color: #fff;
+	background: rgba(0, 0, 0, 0.57);
+	text-align: left;
+}
+
+/* Structure and containers ==================================== */
+section {
+	padding: 20px
+}
+
+.left {
+	min-height: 100%;
+	position: relative;
+	float: left;
+	width: 50%;
+	background: rgba(0, 0, 0, 0.57);
+}
+
+.left section {
+	text-align: center;
+	color: #fff;
+	width: 80%;
+	margin: 0 auto;
+	margin-top: 80px;
+}
+
+.left section h1 {
+	font-weight: 700;
+	text-transform: uppercase;
+	margin: 0 0 20px
+}
+
+.padded {
+	padding: 4em !important
+}
+
+.wrapper {
+	min-height: 91%;
+	height: auto !important;
+	height: 100%;
+	margin: 0 auto 0em;
+}
+
+
+
+/* Popup rules   ========================================= */
+
+.cd-popup {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s 0s, visibility 0s 0.3s;
+}
+ 
+.cd-popup .is-visible {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.3s 0s, visibility 0s 0s;
+}
+ 
+.cd-popup-container {
+  transform: translateY(-40px);
+  transition-property: transform;
+  transition-duration: 0.3s;
+}
+ 
+.is-visible .cd-popup-container {
+  transform: translateY(0);
+}
+
+/* Responsive options  ==================================== */
+@media screen and (max-width: 50em) {
+	.title {
+	font-size: 2.8em;
+	}
+	
+	.left, .right {
+		width: 100%;
+		position: relative
+	}
+	.left section {
+		text-align: center;
+		width: 80%;
+		padding-top: 30px;
+	}
+}
